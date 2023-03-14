@@ -23,7 +23,7 @@ variable key_pair {
 
 variable volume_size {
   type        = string
-  default     = "200"
+  default     = "300"
   description = "Tamanho do disco"
 }
 
