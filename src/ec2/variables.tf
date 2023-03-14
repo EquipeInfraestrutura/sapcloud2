@@ -17,7 +17,7 @@ variable "instance_type_sql" {
 
 variable key_pair {
   type        = string
-  default     = "terraform_teste"
+  default     = "Key_projetos"
   description = "Key pair para logar na máquina"
 }
 
