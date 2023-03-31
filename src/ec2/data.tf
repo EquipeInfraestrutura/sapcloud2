@@ -1,8 +1,8 @@
-data "aws_ami" "windows_serverwithsql2022" {
+data "aws_ami" "windows_serverwithsql2019" {
      most_recent = true     
 filter {
        name   = "name"
-       values = ["Windows_Server-2022-English-Full-SQL_2022_Standard-*"]  
+       values = ["Windows_Server-2022-English-Full-SQL_2019_Standard-*"]  
   }     
 filter {
        name   = "virtualization-type"
