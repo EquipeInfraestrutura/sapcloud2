@@ -26,7 +26,7 @@ resource "aws_eip" "eip_pub" {
 resource "aws_instance" "windows_sql" {
   count                  = var.instance_count
   instance_type          = var.instance_type_sql
-  ami                    = data.aws_ami.windows_serverwithsql2022.id
+  ami                    = data.aws_ami.windows_serverwithsql2019.id
   key_name               = var.key_pair
   vpc_security_group_ids = var.sg_private
   subnet_id              = var.private_subnet
