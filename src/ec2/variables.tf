@@ -4,7 +4,7 @@ variable "instance_count" {
 }
 
 variable "instance_type_client" {
-   default     = "m5.large"
+   default     = "m5.xlarge"
    type        = string
    description = "tipo da instancia"
 }
