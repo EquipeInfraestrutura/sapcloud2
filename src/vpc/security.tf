@@ -22,14 +22,16 @@ resource "aws_security_group" "sg_public" {
     protocol         = "tcp"
     cidr_blocks      = ["0.0.0.0/0"]
   }
-    ingress {
+
+  ingress {
     description      = "Porta para exposicao do sap web"
     from_port        = 10443
     to_port          = 10443
     protocol         = "tcp"
     cidr_blocks      = ["0.0.0.0/0"]
   }
-    ingress {
+
+  ingress {
     description      = "Porta de comunicação da sld"
     from_port        = 40000
     to_port          = 40000
@@ -37,7 +39,7 @@ resource "aws_security_group" "sg_public" {
     cidr_blocks      = ["0.0.0.0/0"]
   }
 
-    ingress {
+  ingress {
     description      = ""
     from_port        = 50000
     to_port          = 50000
@@ -45,22 +47,22 @@ resource "aws_security_group" "sg_public" {
     cidr_blocks      = ["0.0.0.0/0"]
   }
 
-    ingress {
+  ingress {
     description      = ""
     from_port        = 1433
     to_port          = 1433
     protocol         = "tcp"
     cidr_blocks      = ["0.0.0.0/0"]
   }
-    ingress {
+  
+  ingress {
     description      = "Porta de comunicação da sld"
     from_port        = 3389
     to_port          = 3389
     protocol         = "tcp"
     cidr_blocks      = ["10.11.5.0/24"]
   }
-
-
+  
   egress {
     from_port        = 0
     to_port          = 0
