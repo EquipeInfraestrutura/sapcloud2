@@ -14,7 +14,7 @@ resource "aws_security_group" "sg_public" {
     protocol         = "tcp"
     cidr_blocks      = ["0.0.0.0/0"]
   }
-
+  
   ingress {
     description      = "HTTPS from VPC"
     from_port        = 443
@@ -32,7 +32,6 @@ resource "aws_security_group" "sg_public" {
   }
 
   ingress {
-    description      = "Porta de comunicacao da sld"
     from_port        = 40000
     to_port          = 40000
     protocol         = "tcp"
@@ -40,7 +39,6 @@ resource "aws_security_group" "sg_public" {
   }
 
   ingress {
-    description      = ""
     from_port        = 50000
     to_port          = 50000
     protocol         = "tcp"
@@ -48,7 +46,6 @@ resource "aws_security_group" "sg_public" {
   }
 
   ingress {
-    description      = ""
     from_port        = 1433
     to_port          = 1433
     protocol         = "tcp"
@@ -56,7 +53,6 @@ resource "aws_security_group" "sg_public" {
   }
   
   ingress {
-    description      = "Porta de comunicação da sld"
     from_port        = 3389
     to_port          = 3389
     protocol         = "tcp"
