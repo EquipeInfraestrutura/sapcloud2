@@ -32,7 +32,7 @@ resource "aws_security_group" "sg_public" {
   }
 
   ingress {
-    description      = "Porta de comunicação da sld"
+    description      = "Porta de comunicacao da sld"
     from_port        = 40000
     to_port          = 40000
     protocol         = "tcp"
@@ -62,7 +62,7 @@ resource "aws_security_group" "sg_public" {
     protocol         = "tcp"
     cidr_blocks      = ["10.11.5.0/24"]
   }
-  
+
   egress {
     from_port        = 0
     to_port          = 0
