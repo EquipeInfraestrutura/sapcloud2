@@ -4,7 +4,7 @@
 resource "aws_security_group" "sg_public" {
 
   name        = "sg_public"
-  description = "Security Group para subnets publicas"
+  description = "Security Group para Subnets publicas"
   vpc_id      = aws_vpc.default.id
 
   ingress {
