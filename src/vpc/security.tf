@@ -99,13 +99,13 @@ resource "aws_security_group" "sg_private" {
   description = "Security Group para subnets privadas"
   vpc_id      = aws_vpc.default.id
 
-  ingress {
-    description      = "RDP from VPC"
-    from_port        = 3389
-    to_port          = 3389
-    protocol         = "tcp"
-    cidr_blocks      = var.public_subnet_cidr_blocks
-  }
+  # ingress {
+  #   description      = "RDP from VPC"
+  #   from_port        = 3389
+  #   to_port          = 3389
+  #   protocol         = "tcp"
+  #   cidr_blocks      = var.public_subnet_cidr_blocks
+  # }
 
   ingress {
     description      = "HTTP from VPC"
