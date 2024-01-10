@@ -52,33 +52,33 @@ resource "aws_security_group" "sg_public" {
     cidr_blocks      = ["0.0.0.0/0"]
   }
   
-  # ingress {
-  #   from_port        = 0
-  #   to_port          = 0
-  #   protocol         = "-1"
-  #   cidr_blocks      = ["10.11.5.0/24"]
-  # }
+  ingress {
+    from_port        = 0
+    to_port          = 0
+    protocol         = "-1"
+    cidr_blocks      = ["10.11.5.0/24"]
+  }
 
-  # ingress {
-  #   from_port        = 0
-  #   to_port          = 0
-  #   protocol         = "-1"
-  #   cidr_blocks      = ["172.16.0.0/16"]
-  # }
+  ingress {
+    from_port        = 0
+    to_port          = 0
+    protocol         = "-1"
+    cidr_blocks      = ["172.16.0.0/16"]
+  }
   
-  #ingress {
-   # from_port        = 3389
-   # to_port          = 3389
-   # protocol         = "tcp"
-   # cidr_blocks      = ["172.36.1.0/24"]
-  #}
+  ingress {
+   from_port        = 3389
+   to_port          = 3389
+   protocol         = "tcp"
+   cidr_blocks      = ["172.36.1.0/24"]
+  }
 
-  # ingress {
-  #   from_port        = 3389
-  #   to_port          = 3389
-  #   protocol         = "tcp"
-  #   cidr_blocks      = ["172.36.3.0/24"]
-  # }
+  ingress {
+    from_port        = 3389
+    to_port          = 3389
+    protocol         = "tcp"
+    cidr_blocks      = ["172.36.3.0/24"]
+  }
 
   egress {
     from_port        = 0
@@ -99,13 +99,13 @@ resource "aws_security_group" "sg_private" {
   description = "Security Group para subnets privadas"
   vpc_id      = aws_vpc.default.id
 
-  # ingress {
-  #   description      = "RDP from VPC"
-  #   from_port        = 3389
-  #   to_port          = 3389
-  #   protocol         = "tcp"
-  #   cidr_blocks      = var.public_subnet_cidr_blocks
-  # }
+  ingress {
+    description      = "RDP from VPC"
+    from_port        = 3389
+    to_port          = 3389
+    protocol         = "tcp"
+    cidr_blocks      = var.public_subnet_cidr_blocks
+  }
 
   ingress {
     description      = "HTTP from VPC"
@@ -115,19 +115,19 @@ resource "aws_security_group" "sg_private" {
     cidr_blocks      = ["0.0.0.0/0"]
   }
 
-  # ingress {
-  #   from_port        = 0
-  #   to_port          = 0
-  #   protocol         = "-1"
-  #   cidr_blocks      = ["172.36.0.0/24"]
-  # }
+  ingress {
+    from_port        = 0
+    to_port          = 0
+    protocol         = "-1"
+    cidr_blocks      = ["172.36.0.0/24"]
+  }
 
-  #   ingress {
-  #   from_port        = 0
-  #   to_port          = 0
-  #   protocol         = "-1"
-  #   cidr_blocks      = ["172.36.2.0/24"]
-  # } 
+    ingress {
+    from_port        = 0
+    to_port          = 0
+    protocol         = "-1"
+    cidr_blocks      = ["172.36.2.0/24"]
+  } 
 
   egress {
     from_port        = 0
@@ -136,19 +136,19 @@ resource "aws_security_group" "sg_private" {
     cidr_blocks      = ["0.0.0.0/0"]
   }
 
-  # egress {
-  #   from_port        = 0
-  #   to_port          = 0
-  #   protocol         = "-1"
-  #   cidr_blocks      = ["172.36.0.0/24"]
-  # }
+  egress {
+    from_port        = 0
+    to_port          = 0
+    protocol         = "-1"
+    cidr_blocks      = ["172.36.0.0/24"]
+  }
 
-  # egress {
-  #   from_port        = 0
-  #   to_port          = 0
-  #   protocol         = "-1"
-  #   cidr_blocks      = ["172.36.2.0/24"]
-  # }
+  egress {
+    from_port        = 0
+    to_port          = 0
+    protocol         = "-1"
+    cidr_blocks      = ["172.36.2.0/24"]
+  }
   tags = {
     Name = "sg_private_projetos"
   }
