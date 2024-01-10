@@ -1,5 +1,5 @@
  
-# Security Group Público
+# Security Group público
 
 resource "aws_security_group" "sg_public" {
 
