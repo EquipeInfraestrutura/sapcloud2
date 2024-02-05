@@ -1,4 +1,4 @@
-#imagens das máquinas do client e sql server
+#imagens das máquinas do client windows server 2022 e sql server
 
 variable "amiclient_id" {
   type        = string
