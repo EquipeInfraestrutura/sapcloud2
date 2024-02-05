@@ -5,7 +5,7 @@ resource "aws_instance" "windows_client" {
   ami                    = var.amiclient_id
   key_name               = var.key_pair
   vpc_security_group_ids = var.sg_public
-  subnet_id              = var.public_subnet
+  subnet_id              = var.public_subnet[0]
 
   tags = {
     Name = "SAP_Client_Windows-${count.index + 1}"
@@ -29,7 +29,7 @@ resource "aws_instance" "windows_sql" {
   ami                    = var.amisql_id
   key_name               = var.key_pair
   vpc_security_group_ids = var.sg_private
-  subnet_id              = var.private_subnet
+  subnet_id              = var.private_subnet [0]
 
   tags = {
     Name = "SAP_SQL_Windows-${count.index + 1}"
