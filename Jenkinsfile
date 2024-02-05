@@ -5,14 +5,14 @@ pipeline {
 
         stage('Checkout source') {
             steps {
-                git url: 'https://github.com/EquipeInfraestrutura/sapcloudias.git', branch: 'main'
+                git url: 'https://github.com/EquipeInfraestrutura/sapcloud2.git', branch: 'main'
             }
         }
 
         stage('Criação ou atualização da infra') {
             environment {
                 bucket = credentials('bucket')
-                key = credentials('key_sap')
+                key = credentials('key_sap2')
                 region = credentials('region')
                 AWS_ACCESS_KEY_ID = credentials('AWS_ACCESS_KEY_ID')
                 AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
@@ -24,7 +24,7 @@ pipeline {
                 script {
                     dir('src') {
                         sh 'terraform init -migrate-state --backend-config "bucket=${bucket}" --backend-config "key=${key}" --backend-config "region=${region}"'
-                        sh 'terraform destroy --auto-approve'
+                        sh 'terraform plan'
                     }
                 }
             }
