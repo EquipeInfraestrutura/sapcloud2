@@ -1,3 +1,5 @@
+#imagens das máquinas do client e sql 
+
 variable "amiclient_id" {
   type        = string
   default     = "ami-0ee1b9f15bec6dde7"
