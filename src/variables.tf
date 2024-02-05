@@ -1,4 +1,4 @@
-#imagens das máquinas do client e sql 
+#imagens das máquinas do client e sql server
 
 variable "amiclient_id" {
   type        = string
